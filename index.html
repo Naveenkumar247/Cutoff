@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutoff Calculator</title>
+</head>
+<center>
+<body class=web>
+  <div class=first>
+  <h2>Cutoff</h2>
+  </div>
+  <div class=second>
+<h2 class=title>Lets calculate your cutoff 🤓</h2>
+  </div>
+<div class=box>
+<form class=form>
+    <table class=table>
+        <tr>
+            <td>Mathematics:</td>
+            <td><input id="num1" type="number"></td>
+        </tr>
+        <tr>
+            <td>Physics:</td>
+            <td><input id="num2" type="number"></td>
+        </tr>
+        <tr>
+            <td>Chemistry:</td>
+            <td><input id="num3" type="number"></td>
+        </tr>
+        <tr>
+            <td>Community:</td>
+            <td>
+              <select id=option>
+                <option>BC</option>
+                <option>MBC</option>
+                <option>SC</option>
+                <option>Others</option>
+              </select>
+            </td>
+        </tr>
+        <tr class=button>
+            <td><button type="button" onclick="collegecutoff()">Submit</button></td>
+            <td><button type="button" onclick="clearfields()">Clear</button></td>
+        </tr>
+    </table>
+</form>
+</div>
+
+<hr>
+<div class=block>
+<p class=naveen id="result">Cutoff Result: </p> <br>
+<img class=cwn src=cwn.jpg></img>
+
+<div class=login >
+   <h4 class=horse id="collegecutoff">No.of.College found:</h4><br>
+
+   <h4 class=panda id="scholarship">No.of.Scholarship found:</h4>
+</div>
+
+<div class=move>
+<hr>
+<h2>About Us</h2>
+<p class=aboutus>We are online cutoff finder community, we also provide details of college and scholarship to the student on the basis of their cutoff and we also provide colleges details which includes admission procedures,fees structures,ratings according to our star rating and provides the official picutures and clips of the college.You can also apply the specialized exams for further careier preparations.</p>
+<a class=link href=college.html>Terms & Conditions</a>
+</div>
+
+<script class=js>
+
+    function collegecutoff() {
+      
+        var box1 = Number(document.getElementById("num1").value);
+        var box2 = Number(document.getElementById("num2").value);
+        var box3 = Number(document.getElementById("num3").value);
+
+        var total = (box1) + (box2 / 2) + (box3 / 2); 
+        var message1 = ""; 
+        
+       
+
+        if (total >= 170) {
+        message1 = "40 Colleges are found";
+        } else if (total >= 150) {
+        message1 = "28 Colleges are found";
+        } else if (total >= 100) {
+        message1 = "7 Colleges are found";
+        } else {
+        message1 = "Not found";}
+        
+        var message2 = "";
+        
+        if (total >= 170) {
+        message2 = "17 Scholarships are found";
+        } else if (total >= 150) {
+        message2 = "4 Scholarships are found";
+        } else if (total >= 100) {
+        message2 = "1 Scholarships are found";
+        } else {
+        message2 = "Not found";}
+        
+        document.getElementById("scholarship").innerHTML = 
+          'No. of Scholarships found: <a href="' + "scholarship.html" + '" target="_blank">' + message2 + '</a>';
+
+        document.getElementById("result").textContent = "Cutoff Result: " + total;
+
+        document.getElementById("collegecutoff").innerHTML = 
+          'No. of College found: <a href="' + "scholarship.html" + '" target="_blank">' + message1 + '</a>';
+       
+        
+        
+       
+        
+}
+      function clearfields(){
+        document.getElementById("num1").value="";
+        document.getElementById("num2").value ="";
+        document.getElementById("num3").value
+         ="";
+        document.getElementById("result").textContent
+        ="Cutoff Result:";
+        document.getElementById("collegecutoff").textContent="No.of.College found:";
+        document.getElementById("scholarship").textContent="No.of.Scholarships found:"
+        document.getElementById("option").value=""
+        
+        
+    }
+</script>
+<style>
+   .first {
+    position: sticky;
+    width:100;
+    top: 0;
+    left: 0;
+    padding-top:1px;
+    padding-bottom:0px;
+    width: 100%;
+    height: 90px;
+    background-color:#008080;
+    color: white;
+    font-size:29px;
+    font-family:serif;
+    text-align: center;
+    z-index:10;
+}
+  
+  .box {
+    width: 350px;
+    height:150px;
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 20px
+   
+ 
+   
+}
+
+  .form{
+    margin-top: 13px;
+    
+   
+  }
+  .back{
+    position:relative;
+    display:inline-block;
+  }
+  .button{
+    padding 30px
+    color:green
+  }
+  .cwn{
+    bottom:60px;
+    width:300px;
+    position: relative;
+    opacity :0.2;
+    display: inline-flex
+    z-index:-1;
+  }
+  .login{
+    position: relative;
+    bottom:300px;
+    left:2%;
+  }
+  .move{
+    position: relative;
+    bottom:200px;
+  }
+  .aboutus{
+    color: #008080;
+    text-shadow:0 89 09
+  }
+    
+</style>
+</body>
+</center>
+</html>
